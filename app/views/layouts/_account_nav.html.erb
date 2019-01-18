@@ -1,0 +1,69 @@
+<nav class="navbar navbar-default" role="navigation" style="background-color:#1d2330">
+	<div class="container-fluid">
+    <div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse"
+							data-target="#example-navbar-collapse">
+					<span class="sr-only">change</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+			</button>
+      <a class="navbar-brand" href="/" style="padding:0;"><%= image_tag "header_logo",height: "50"%></a>
+    </div>
+    <div class="collapse navbar-collapse" id="example-navbar-collapse">
+        <!--向左对齐-->
+        <ul class="nav navbar-nav navbar-left">
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    个人中心
+                    <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">jmeter</a></li>
+                    <li><a href="#">EJB</a></li>
+                    <li><a href="#">Jasper Report</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">分离的链接</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">另一个分离的链接</a></li>
+                </ul>
+            </li>
+        </ul>
+        <!-- <form class="navbar-form navbar-left" role="search">
+            <button type="submit" class="btn btn-default">
+                搜索
+            </button>
+        </form>
+				<p class="navbar-text navbar-left"><input type="text" placeholder="search" style="background: currentColor;border: none;" /></p> -->
+        <p class="navbar-text navbar-left"><%= link_to "添加交易所", "/" %></p>
+        <!--向右对齐-->
+        <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <%= current_user.email %> <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">1</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">2</a></li>
+										<% if current_user %>
+		                   <li class="divider"></li>
+	                    <li>
+												<%= link_to "退出登录",destroy_user_session_path, method: :DELETE %>
+											</li>
+										<% end %>
+                </ul>
+            </li>
+        </ul>
+        <!-- <form class="navbar-form navbar-right" role="search">
+            <button type="submit" class="btn btn-default">
+                搜索
+            </button>
+        </form> -->
+				<% unless current_user %>
+					<p class="navbar-text navbar-right"><%= link_to "注册",new_user_registration_path %></p>
+	        <p class="navbar-text navbar-right"><%= link_to "登录",new_user_session_path %></p>
+				<% end %>
+		</div>
+	</div>
+</nav>

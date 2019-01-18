@@ -1,2 +1,709 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<!--header开始-->
+<div class="header">
+  <div class="header_logo fl">
+    <a href="#"><%= image_tag "header_logo"%></a>
+  </div>
+  <div class="header_nav fl " style="margin-top:20px;">
+    <div
+      style="width: 100%; height:62px;  overflow:hidden; box-sizing: border-box;border-radius: 4px; text-align: right; line-height:14px; block-size:62px; font-size: 12px; box-sizing:content-box; font-feature-settings: normal; text-size-adjust: 100%; padding:1px;padding: 0px; margin: 0px;">
+      <div style="height:40px;width:600px;">
+        <iframe
+          src="https://widget.coinlib.io/widget?type=horizontal_v2&theme=dark&pref_coin_id=1505&invert_hover=no"
+          width="100%"
+          height="36"
+          scrolling="auto"
+          marginwidth="0"
+          marginheight="0"
+          frameborder="0"
+          border="0"
+          style="border:0;margin:0;padding:0;background:none"></iframe>
+      </div>
+    </div>
+
+  </div>
+    <div class="header_nav fl" style="margin-top:20px;line-height:40px;color:#fff;">
+      <% if current_user %>
+        <a href="<%= accounts_path %>" style="color:#fff;"><%= current_user.email%></a>
+      <% else %>
+        <a href="<%= new_user_session_path %>" style="color:#fff;">登录</a>
+        <a href="<%= new_user_registration_path %>" style="color:#fff;">注册</a>
+      <% end %>
+    </div>
+  <div class="header_myself fr" style="position: relative;z-index: 99999;">
+    <p>
+      语言选择：<a href="index.html"><%= image_tag "cn"%></a>
+      <a href="en/index.html"><%= image_tag "en"%></a>
+    </p>
+
+  </div>
+</div>
+<!--header结束-->
+
+<!--content开始-->
+<div class="data_content">
+
+  <div class="big-index-1">
+    <ul>
+      <div class="bigMain">
+
+        <b class="animation-1"></b>
+        <b class="animation-2"></b>
+        <b class="animation-3"></b>
+        <p>数据分析中</p>
+        <ul class="runNum" id="test"></ul>
+      </div>
+      <div class="bigMain">
+        <b class="animation-1"></b>
+        <b class="animation-2"></b>
+        <b class="animation-3"></b>
+        <p>数据分析中</p>
+        <ul class="runNum" id="test2"></ul>
+      </div>
+      <div class="bigMain">
+        <b class="animation-1"></b>
+        <b class="animation-2"></b>
+        <b class="animation-3"></b>
+        <p>数据分析中</p>
+        <ul class="runNum" id="test3"></ul>
+      </div>
+      <div class="bigMain">
+        <b class="animation-1"></b>
+        <b class="animation-2"></b>
+        <b class="animation-3"></b>
+        <p>数据分析中</p>
+        <ul class="runNum" id="test4"></ul>
+      </div>
+      <div class="bigMain">
+        <b class="animation-1"></b>
+        <b class="animation-2"></b>
+        <b class="animation-3"></b>
+        <p>数据分析中</p>
+        <ul class="runNum" id="test5"></ul>
+      </div>
+      <div class="bigMain">
+        <b class="animation-1"></b>
+        <b class="animation-2"></b>
+        <b class="animation-3"></b>
+        <p>数据分析中</p>
+        <ul class="runNum" id="test6"></ul>
+      </div>
+    </ul>
+  </div>
+
+  <ul class="record_btn">
+    <li>
+      <a href="hq.html">智能获取行情数据</a>
+    </li>
+    <li>
+      <a href="price.html">智能分析市场交易</a>
+    </li>
+    <li>
+      <a href="default.html">智能交易获取收益</a>
+    </li>
+    <li>
+      <a href="intro.html">智能搬砖量化对冲</a>
+    </li>
+  </ul>
+
+  <div class="right-area">
+    <!-- <h3>语音网络接通率 <b></b></h3> -->
+    <div class="area-inbox-1">
+      <dl>
+        <dt>智能获取中</dt>
+        <dd class="font12">
+          <span id="span1">0%</span>
+          <b></b>
+        </dd>
+        <dt class="ml-20">智能分析进行中</dt>
+        <dd class="font-red ml-20">
+          <span id="span2">0%</span>
+          <b></b>
+        </dd>
+        <dt>智能交易进行中</dt>
+        <dd>
+          <span id="span3">5%</span>
+          <b></b>
+        </dd>
+      </dl>
+      <div class="round-1"></div>
+      <div class="round-2"></div>
+      <div class="round-3"></div>
+      <div class="round-4"></div>
+    </div>
+    <script type="text/javascript">
+
+      var num = 0;
+      var t = setInterval(function () {
+        num++;
+        var span1 = document.getElementById("span1");
+        span1.innerText = num + '%';
+        if (num == 100) {
+          // clearInterval(t); getInterface().html_jump_href(service+'/html/home_Physiognomy3.html','no');
+          num = 0;
+          var span1 = document.getElementById("span1");
+          span1.innerText = num + '%';
+        }
+      }, 100);
+    </script>
+    <script type="text/javascript">
+
+      var num = 0;
+      var t = setInterval(function () {
+        num++;
+        var span1 = document.getElementById("span2");
+        span1.innerText = num + '%';
+        if (num == 100) {
+          // clearInterval(t); getInterface().html_jump_href(service+'/html/home_Physiognomy3.html','no');
+          num = 0;
+          var span1 = document.getElementById("span2");
+          span1.innerText = num + '%';
+        }
+      }, 1000);
+    </script>
+    <script type="text/javascript">
+
+      var num = 0;
+      var t = setInterval(function () {
+        num++;
+        var span1 = document.getElementById("span3");
+        span1.innerText = num + '%';
+        if (num == 100) {
+          // clearInterval(t); getInterface().html_jump_href(service+'/html/home_Physiognomy3.html','no');
+          num = 0;
+          var span1 = document.getElementById("span3");
+          span1.innerText = num + '%';
+        }
+      }, 1000);
+    </script>
+
+    <div class="area-inbox-2"></div>
+  </div>
+
+  <div class="data_info"></div>
+
+  <div class="data_main">
+    <div class="main_left fl">
+      <div class="left_1">
+        <div class="main_title">
+          <img src="/assets/picture/title_1.png" alt="">
+          智能获取行情数据
+        </div>
+        <div class="preMain box" style="">
+
+          <ul>
+            <pre class="prettyprint">
+              <code class="python">
+                <table class="highlight tab-size js-file-line-container" data-tab-size="8">
+                  <tbody>
+                    <tr>
+                      <td id="l1" class="blob-num js-line-number" data-line-number="1"></td>
+                      <td id="lc1" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">//</span> copyright 2015 the go-ethereum authors</span></td>
+                    </tr>
+                    <tr>
+                      <td id="l2" class="blob-num js-line-number" data-line-number="2"></td>
+                      <td id="lc2" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">//</span> this file is part of the go-ethereum library.</span></td>
+                    </tr>
+                    <tr>
+                      <td id="l3" class="blob-num js-line-number" data-line-number="3"></td>
+                      <td id="lc3" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">//</span></span></td>
+                    </tr>
+                    <tr>
+                      <td id="l4" class="blob-num js-line-number" data-line-number="4"></td>
+                      <td id="lc4" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">//</span> the go-ethereum library is free software: you can redistribute it and/or modify</span></td>
+                    </tr>
+                    <tr>
+                      <td id="l5" class="blob-num js-line-number" data-line-number="5"></td>
+                      <td id="lc5" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">//</span> it under the terms of the gnu lesser general public license as published by</span></td>
+                    </tr>
+                    <tr>
+                      <td id="l6" class="blob-num js-line-number" data-line-number="6"></td>
+                      <td id="lc6" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">//</span> the free software foundation, either version 3 of the license, or</span></td>
+                    </tr>
+                    <tr>
+                      <td id="l7" class="blob-num js-line-number" data-line-number="7"></td>
+                      <td id="lc7" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">//</span> (at your option) any later version.</span></td>
+                    </tr>
+                    <tr>
+                      <td id="l8" class="blob-num js-line-number" data-line-number="8"></td>
+                      <td id="lc8" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">//</span></span></td>
+                    </tr>
+                    <tr>
+                      <td id="l9" class="blob-num js-line-number" data-line-number="9"></td>
+                      <td id="lc9" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">//</span> the go-ethereum library is distributed in the hope that it will be useful,</span></td>
+                    </tr>
+                    <tr>
+                      <td id="l10" class="blob-num js-line-number" data-line-number="10"></td>
+                      <td id="lc10" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">//</span> but without any warranty; without even the implied warranty of</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </code>
+            </pre>
+          </ul>
+        </div>
+
+        <!-- <iframe src="http://www.coincaps.ai/zh/widget/ticker/ETH?hcolor=111111&tcolor=ffffff" style="width: 100%; overflow: hidden;scroll-behavior: unset;height: 280px;border: unset;"></iframe> -->
+        <!-- <div id="chart_1" class="chart" style="width:100%;height: 280px;"></div> -->
+        <!-- <iframe scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" style="position: static; visibility: visible; display: block; width: 500px; height: 457px; padding: 0px; border: none; max-width: 100%; min-width: 400px;
+        min-height: 300px; margin-top: 10px; margin-bottom: 10px;" src="https://charts.bitcoin.com/bch/embed/daily-transactions"></iframe> -->
+      </div>
+      <div class="left_2">
+        <div class="main_title">
+          <img src="/assets/picture/title_2.png" alt="">
+          智能分析市场交易
+        </div>
+        <div class="preMain box">
+          <ul>
+            <pre class="prettyprint">
+              <code>
+                <table class="highlight tab-size js-file-line-container" data-tab-size="8">
+                  <tbody>
+                    <tr>
+                      <td id="l1" class="blob-num js-line-number" data-line-number="1"></td>
+                      <td id="lc1" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span>!/usr/bin/env python</span></td>
+                    </tr>
+                    <tr>
+                      <td id="l2" class="blob-num js-line-number" data-line-number="2"></td>
+                      <td id="lc2" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span>
+                          -*- coding: utf-8 -*-</span></td>
+                    </tr>
+                    <tr>
+                      <td id="l3" class="blob-num js-line-number" data-line-number="3"></td>
+                      <td id="lc3" class="blob-code blob-code-inner js-file-line"></td>
+                    </tr>
+                    <tr>
+                      <td id="l4" class="blob-num js-line-number" data-line-number="4"></td>
+                      <td id="lc4" class="blob-code blob-code-inner js-file-line">
+                        <span class="pl-k">from</span>
+                        setuptools
+                        <span class="pl-k">import</span>
+                        setup, find_packages</td>
+                    </tr>
+                    <tr>
+                      <td id="l5" class="blob-num js-line-number" data-line-number="5"></td>
+                      <td id="lc5" class="blob-code blob-code-inner js-file-line">
+                        <span class="pl-k">from</span>
+                        codecs
+                        <span class="pl-k">import</span>
+                        <span class="pl-c1">open</span></td>
+                    </tr>
+                    <tr>
+                      <td id="l6" class="blob-num js-line-number" data-line-number="6"></td>
+                      <td id="lc6" class="blob-code blob-code-inner js-file-line">
+                        <span class="pl-k">from</span>
+                        os
+                        <span class="pl-k">import</span>
+                        path</td>
+                    </tr>
+                    <tr>
+                      <td id="l7" class="blob-num js-line-number" data-line-number="7"></td>
+                      <td id="lc7" class="blob-code blob-code-inner js-file-line">
+                        <span class="pl-k">import</span>
+                        re</td>
+                    </tr>
+                    <tr>
+                      <td id="l8" class="blob-num js-line-number" data-line-number="8"></td>
+                      <td id="lc8" class="blob-code blob-code-inner js-file-line"></td>
+                    </tr>
+                    <tr>
+                      <td id="l9" class="blob-num js-line-number" data-line-number="9"></td>
+                      <td id="lc9" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span>
+                          get the long description from the readme file</span></td>
+                    </tr>
+                    <tr>
+                      <td id="l10" class="blob-num js-line-number" data-line-number="10"></td>
+                      <td id="lc10" class="blob-code blob-code-inner js-file-line">
+                        <span class="pl-k">with</span>
+                        <span class="pl-c1">open</span>(path.join(<span class="pl-s"><span class="pl-pds">'</span>readme.rst<span class="pl-pds">'</span></span>),
+                        <span class="pl-v">encoding</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">'</span>utf-8<span class="pl-pds">'</span></span>)
+                        <span class="pl-k">as</span>
+                        f:</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </code>
+              </pre>
+          </ul>
+        </div>
+        <!-- <div id="chart_2" class="chart" style="width:100%;height: 280px;"></div> -->
+      </div>
+    </div>
+    <div class="main_center fl">
+      <div class="center_text">
+        <div class="main_title">
+          <img src="/assets/picture/title_3.png" alt="">
+          实时价格走势图
+        </div>
+        <!-- <div id="chart_map" style="width:100%;height:610px;"></div> -->
+        <div class="" style="pointer-events:none;">
+
+          <div
+            style="height:575px; background-color: #1D2330; overflow:hidden; box-sizing: border-box; border: 1px solid #282E3B; border-radius: 4px; text-align: right; line-height:14px; font-size: 12px; box-sizing:content-box; font-feature-settings: normal; text-size-adjust: 100%; /*box-shadow: inset 0 -20px 0 0 #262B38;*/padding:1px;padding: 0px; margin: 15px;">
+            <div style="height:560px;padding:15px;margin:0px;">
+              <iframe
+                src="https://widget.coinlib.io/widget?type=chart&theme=dark&coin_id=859&pref_coin_id=1505"
+                width="100%"
+                height="576"
+                scrolling="auto"
+                marginwidth="0"
+                marginheight="0"
+                frameborder="0"
+                border="0"
+                style="border:0;margin:0;padding:0;line-height:14px;box-sizing:content-box;"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="main_right fr">
+      <div class="right_1">
+        <div class="main_title">
+          <img src="/assets/picture/title_4.png" alt="">
+          智能交易获取收益
+        </div>
+        <div class="preMain box">
+          <ul>
+            <pre class="prettyprint">
+              <code>
+                <table class="highlight tab-size js-file-line-container" data-tab-size="8">
+                  <tbody>
+                    <tr>
+                      <td id="l1" class="blob-num js-line-number" data-line-number="1"></td>
+                      <td id="lc1" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#!</span>/bin/bash</span></td>
+                    </tr>
+                    <tr>
+                      <td id="l2" class="blob-num js-line-number" data-line-number="2"></td>
+                      <td id="lc2" class="blob-code blob-code-inner js-file-line">
+                    </td>
+                    </tr>
+                    <tr>
+                      <td id="l3" class="blob-num js-line-number" data-line-number="3"></td>
+                      <td id="lc3" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span> set up a wallet just for holding the key used during blockchain ignition</span></td>
+                    </tr>
+                    <tr>
+                      <td id="l4" class="blob-num js-line-number" data-line-number="4"></td>
+                      <td id="lc4" class="blob-code blob-code-inner js-file-line">
+                    </td>
+                    </tr>
+                    <tr>
+                      <td id="l5" class="blob-num js-line-number" data-line-number="5"></td>
+                      <td id="lc5" class="blob-code blob-code-inner js-file-line">bioshost=<span class="pl-smi">$bios_hostname</span></td>
+                    </tr>
+                    <tr>
+                      <td id="l6" class="blob-num js-line-number" data-line-number="6"></td>
+                      <td id="lc6" class="blob-code blob-code-inner js-file-line"><span class="pl-k">if</span> [ <span class="pl-k">-z</span> <span class="pl-s"><span class="pl-pds">"</span><span class="pl-smi">$bioshost</span><span class="pl-pds">"</span></span> ]<span class="pl-k">;</span> <span class="pl-k">then</span></td>
+                    </tr>
+                    <tr>
+                      <td id="l7" class="blob-num js-line-number" data-line-number="7"></td>
+                      <td id="lc7" class="blob-code blob-code-inner js-file-line">   bioshost=localhost</td>
+                    </tr>
+                    <tr>
+                      <td id="l8" class="blob-num js-line-number" data-line-number="8"></td>
+                      <td id="lc8" class="blob-code blob-code-inner js-file-line"><span class="pl-k">fi</span></td>
+                    </tr>
+                    <tr>
+                      <td id="l9" class="blob-num js-line-number" data-line-number="9"></td>
+                      <td id="lc9" class="blob-code blob-code-inner js-file-line">
+                    </td>
+                    </tr>
+                    <tr>
+                      <td id="l10" class="blob-num js-line-number" data-line-number="10"></td>
+                      <td id="lc10" class="blob-code blob-code-inner js-file-line">biosport=<span class="pl-smi">$bios_http_port</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </code>
+              </pre>
+          </ul>
+        </div>
+        <!-- <div id="chart_3" class="echart" style="width:100%;height: 280px;"></div> -->
+      </div>
+      <div class="right_2">
+        <div class="main_title">
+          <img src="/assets/picture/title_5.png" alt="">
+          智能搬砖量化对冲
+        </div>
+        <!-- <div id="chart_4" class="echart fl" style="width:80%;height: 230px;"></div> -->
+        <div class="preMain box">
+          <ul>
+            <pre class="prettyprint">
+                    <code>
+                    <table class="highlight tab-size js-file-line-container" data-tab-size="8">
+                    <tbody>
+                    <tr>
+                      <td id="l1" class="blob-num js-line-number" data-line-number="1"></td>
+                      <td id="lc1" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#!</span>/bin/bash</span></td>
+                    </tr>
+                    <tr>
+                      <td id="l2" class="blob-num js-line-number" data-line-number="2"></td>
+                      <td id="lc2" class="blob-code blob-code-inner js-file-line">
+                    </td>
+                    </tr>
+                    <tr>
+                      <td id="l3" class="blob-num js-line-number" data-line-number="3"></td>
+                      <td id="lc3" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span> set up a wallet just for holding the key used during blockchain ignition</span></td>
+                    </tr>
+                    <tr>
+                      <td id="l4" class="blob-num js-line-number" data-line-number="4"></td>
+                      <td id="lc4" class="blob-code blob-code-inner js-file-line">
+                    </td>
+                    </tr>
+                    <tr>
+                      <td id="l5" class="blob-num js-line-number" data-line-number="5"></td>
+                      <td id="lc5" class="blob-code blob-code-inner js-file-line">bioshost=<span class="pl-smi">$bios_hostname</span></td>
+                    </tr>
+                    <tr>
+                      <td id="l6" class="blob-num js-line-number" data-line-number="6"></td>
+                      <td id="lc6" class="blob-code blob-code-inner js-file-line"><span class="pl-k">if</span> [ <span class="pl-k">-z</span> <span class="pl-s"><span class="pl-pds">"</span><span class="pl-smi">$bioshost</span><span class="pl-pds">"</span></span> ]<span class="pl-k">;</span> <span class="pl-k">then</span></td>
+                    </tr>
+                    <tr>
+                      <td id="l7" class="blob-num js-line-number" data-line-number="7"></td>
+                      <td id="lc7" class="blob-code blob-code-inner js-file-line">   bioshost=localhost</td>
+                    </tr>
+                    <tr>
+                      <td id="l8" class="blob-num js-line-number" data-line-number="8"></td>
+                      <td id="lc8" class="blob-code blob-code-inner js-file-line"><span class="pl-k">fi</span></td>
+                    </tr>
+                    <tr>
+                      <td id="l9" class="blob-num js-line-number" data-line-number="9"></td>
+                      <td id="lc9" class="blob-code blob-code-inner js-file-line">
+                    </td>
+                    </tr>
+                    <tr>
+                      <td id="l10" class="blob-num js-line-number" data-line-number="10"></td>
+                      <td id="lc10" class="blob-code blob-code-inner js-file-line">biosport=<span class="pl-smi">$bios_http_port</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </code>
+            </pre>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="data_bottom">
+    <div class="bottom_1 fl">
+      <div class="main_title">
+        <img src="/assets/picture/title_6.png" alt="">
+        ETH实行走势
+      </div>
+      <div class="main_table" style="pointer-events:none;">
+        <div
+          style="width: auto; height:240px; background-color: #1D2330; overflow:hidden; box-sizing: border-box; border: 1px solid #282E3B; border-radius: 4px; text-align: right; line-height:14px; block-size:240px; font-size: 12px; box-sizing:content-box; font-feature-settings: normal; text-size-adjust: 100%; box-shadow: inset 0 -20px 0 0 #262B38;padding:1px;padding: 0px; margin: 15px;">
+          <div style="height:210px;">
+            <iframe
+              src="https://widget.coinlib.io/widget?type=single_v2&theme=dark&coin_id=145&pref_coin_id=1505"
+              width="100%"
+              height="100%"
+              scrolling="auto"
+              marginwidth="0"
+              marginheight="0"
+              frameborder="0"
+              border="0"
+              style="border:0;margin:0;padding:0;line-height:14px;box-sizing:content-box;"></iframe>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="bottom_center fl">
+      <div class="bottom_2 fl">
+        <div class="main_title">
+          <img src="/assets/picture/title_6.png" alt="">
+          EOS实行走势
+        </div>
+        <div class="main_table" style="pointer-events:none;">
+          <div
+            style="width: auto; height:240px; background-color: #1D2330; overflow:hidden; box-sizing: border-box; border: 1px solid #282E3B; border-radius: 4px; text-align: right; line-height:14px; block-size:240px; font-size: 12px; box-sizing:content-box; font-feature-settings: normal; text-size-adjust: 100%; box-shadow: inset 0 -20px 0 0 #262B38;padding:1px;padding: 0px; margin: 15px;">
+            <div style="height:210px;">
+              <iframe
+                src="https://widget.coinlib.io/widget?type=single_v2&theme=dark&coin_id=585&pref_coin_id=1505"
+                width="100%"
+                height="100%"
+                scrolling="auto"
+                marginwidth="0"
+                marginheight="0"
+                frameborder="0"
+                border="0"
+                style="border:0;margin:0;padding:0;line-height:14px;box-sizing:content-box;"></iframe>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="bottom_3 fl">
+        <div class="main_title">
+          <img src="/assets/picture/title_6.png" alt="">
+          XPR实行走势
+        </div>
+        <div class="main_table" style="pointer-events:none;">
+
+          <div
+            style="width: auto; height:240px; background-color: #1D2330; overflow:hidden; box-sizing: border-box; border: 1px solid #282E3B; border-radius: 4px; text-align: right; line-height:14px; block-size:240px; font-size: 12px; box-sizing:content-box; font-feature-settings: normal; text-size-adjust: 100%; box-shadow: inset 0 -20px 0 0 #262B38;padding:1px;padding: 0px; margin: 15px;">
+            <div style="height:210px;">
+              <iframe
+                src="https://widget.coinlib.io/widget?type=single_v2&theme=dark&coin_id=619&pref_coin_id=1505"
+                width="100%"
+                height="100%"
+                scrolling="auto"
+                marginwidth="0"
+                marginheight="0"
+                frameborder="0"
+                border="0"
+                style="border:0;margin:0;padding:0;line-height:14px;box-sizing:content-box;"></iframe>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="bottom_4 fr">
+      <div class="main_title">
+        <img src="/assets/picture/title_5.png" alt="">
+        LTC实行走势
+      </div>
+      <div class="main_table" style="pointer-events:none;">
+        <div
+          style="width: auto; height:240px; background-color: #1D2330; overflow:hidden; box-sizing: border-box; border: 1px solid #282E3B; border-radius: 4px; text-align: right; line-height:14px; block-size:240px; font-size: 12px; box-sizing:content-box; font-feature-settings: normal; text-size-adjust: 100%; box-shadow: inset 0 -20px 0 0 #262B38;padding:1px;padding: 0px; margin: 15px;">
+          <div style="height:210px;">
+            <iframe
+              src="https://widget.coinlib.io/widget?type=single_v2&theme=dark&coin_id=359&pref_coin_id=1505"
+              width="100%"
+              height="100%"
+              scrolling="auto"
+              marginwidth="0"
+              marginheight="0"
+              frameborder="0"
+              border="0"
+              style="border:0;margin:0;padding:0;line-height:14px;box-sizing:content-box;"></iframe>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+<!--content结束-->
+<!-- <script src="js/jquery-2.2.1.min.js"></script> <script src="js/bootstrap.min.js"></script> <script src="js/common.js"></script> -->
+<script type="text/javascript">
+(function ($) {
+  /*jQuery对象添加  runNum  方法*/
+  $.fn.extend({
+    /*
+                *   滚动数字
+                *   @ val 值，    params 参数对象
+                *   params{addMin(随机最小值),addMax(随机最大值),interval(动画间隔),speed(动画滚动速度),width(列宽),height(行高)}
+            */
+    runNum: function (val, params) {
+      /*初始化动画参数*/
+      var valString = val || '70225800'
+      var par = params || {};
+      var runNumJson = {
+        el: $(this),
+        value: valString,
+        valueStr: valString.toString(10),
+        width: par.width || 10,
+        height: par.height || 22,
+        addMin: par.addMin || 10000,
+        addMax: par.addMax || 99999,
+        interval: par.interval || 3000,
+        speed: par.speed || 1000,
+        width: par.width || 10,
+        length: valString.toString(10).length
+      };
+      $._runNum._list(runNumJson.el, runNumJson);
+      $._runNum._interval(runNumJson.el.children("li"), runNumJson);
+    }
+  });
+  /*jQuery对象添加  _runNum  属性*/
+  $._runNum = {
+    /*初始化数字列表*/
+    _list: function (el, json) {
+      var str = '';
+      for (var i = 0; i < json.length; i++) {
+        var w = json.width * i;
+        var t = json.height * parseInt(json.valueStr[i]);
+        var h = json.height * 10;
+        str += '<li style="width:' + json.width + 'px;left:' + w + 'px;top: ' + -t + 'px;height:' + h + 'px;">';
+        for (var j = 0; j < 10; j++) {
+          str += '<div style="height:' + json.height + 'px;line-height:' + json.height + 'px;">' + j + '</div>';
+        }
+        str += '</li>';
+      }
+      el.html(str);
+    },
+    /*生成随即数*/
+    _random: function (json) {
+      var Range = json.addMax - json.addMin;
+      var Rand = Math.random();
+      var num = json.addMin + Math.round(Rand * Range);
+      return num;
+    },
+    /*执行动画效果*/
+    _animate: function (el, value, json) {
+      for (var x = 0; x < json.length; x++) {
+        var topPx = value[x] * json.height;
+        el.eq(x).animate({
+          top: -topPx + 'px'
+        }, json.speed);
+      }
+    },
+    /*定期刷新动画列表*/
+    _interval: function (el, json) {
+      var val = json.value;
+      setInterval(function () {
+        val += $._runNum._random(json);
+        $._runNum._animate(el, val.toString(10), json);
+      }, json.interval);
+    }
+  }
+})(jQuery);
+</script>
+<script type="text/javascript">
+$("#test").runNum(170031);
+$("#test2").runNum(614030);
+$("#test3").runNum(241546);
+$("#test4").runNum(591130);
+$("#test5").runNum(119289);
+$("#test6").runNum(402258);
+</script>
+<script>
+
+(function ($) {
+  $.fn.scrollTop = function (options) {
+    var defaults = {
+      speed: 30
+    }
+    var opts = $.extend(defaults, options);
+    this.each(function () {
+      var $timer;
+      var scroll_top = 0;
+      var obj = $(this);
+      var $height = obj.find("ul").height();
+      obj.find("ul").clone().appendTo(obj);
+      obj.hover(function () {
+        clearInterval($timer);
+      }, function () {
+        $timer = setInterval(function () {
+          scroll_top++;
+          if (scroll_top > $height) {
+            scroll_top = 0;
+          }
+          obj.find("ul").first().css("margin-top", -scroll_top);
+        }, opts.speed);
+      }).trigger("mouseleave");
+    })
+  }
+})(jQuery)
+</script>
+<script>
+$(function () {
+  $(".box").scrollTop({
+    speed: 30 //数值越大 速度越慢
+  });
+})
+</script>

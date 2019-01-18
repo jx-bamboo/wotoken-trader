@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>WotokenTrader</title>
+    <%= csrf_meta_tags %>
+    <meta charset="utf-8" />
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+  	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+  	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style media="screen">
+      .bb{border:1px solid red;}
+    </style>
+  </head>
+
+  <body>
+    <%= render "layouts/account_nav" %>
+    <div class="container">
+      <p class="notice" id="notice"><%= notice %></p>
+      <p class="alert" id="alert"><%= alert %></p>
+    </div>
+    <%= yield %>
+    <div class="jumbotron">
+      <div class="container">
+
+      </div>
+    </div>
+  </body>
+</html>

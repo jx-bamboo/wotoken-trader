@@ -15,11 +15,12 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: root
   password: 12345678
+  port: 3306
   host: localhost
 
 development:
   <<: *default
-  database: wotoken-trader_development
+  database: wotoken_trader_development
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".

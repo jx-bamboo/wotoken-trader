@@ -1,0 +1,340 @@
+
+<script type="text/javascript">
+/*
+<h1>Accounts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @accounts.each do |account| %>
+      <tr>
+        <td><%= link_to 'Show', account %></td>
+        <td><%= link_to 'Edit', edit_account_path(account) %></td>
+        <td><%= link_to 'Destroy', account, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Account', new_account_path %>
+*/
+</script>
+
+
+
+
+<div class="container">
+
+  <div class="panel panel-default">
+      <div class="panel-heading">
+          <h3 class="panel-title">
+              可用买卖交易所
+          </h3>
+      </div>
+      <div class="panel-body">
+        <% @exchange.each_with_index do |k,v| %>
+          <button type="button" class="<%= get_btn_style[v] %>"><%= k["cn_name"] %></button>
+        <% end %>
+      </div>
+  </div>
+
+  <div class="panel panel-default">
+      <div class="panel-heading">
+          <h3 class="panel-title">
+              可用买卖币种
+          </h3>
+      </div>
+      <div class="panel-body">
+        <% @coin.each_with_index do |k,v| %>
+          <button type="button" class="btn"><%= k["en_name"] %></button>
+        <% end %>
+      </div>
+  </div>
+
+  <p class="alert alert-success ng-binding ng-scope" ng-if="!isPrivate">
+     该机器人由 <b><i class="ng-binding">8166</i></b>
+      公开, 绑定策略: <b>
+       <font color="red" class="ng-binding">逐月5.0 租用版  (火币网)</font></b> ,
+        <!-- ngIf: robot.start_time -->
+        <span ng-if="robot.start_time" class="ng-binding ng-scope" style=""> 最近开始于 2019-01-15 23:30:46</span><!-- end ngIf: robot.start_time -->&nbsp;
+        <span class="ng-binding">策略最后更新 <font color="red" class="ng-binding">2019-01-11 18:33:59</font></span>
+  </p>
+
+  <div class="row">
+
+    <div class="col-sm-6">
+      <div class="panel panel-info">
+          <div class="panel-heading">
+              <h3 class="panel-title">实时买入</h3>
+          </div>
+          <div class="panel-body">
+            <form role="form">
+              <div class="form-group">
+                <label for="name">交易所</label>
+                <select class="form-control">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
+                <label for="name">币种</label>
+                <select multiple class="form-control">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="name">买入价格</label>
+                <input type="text" class="form-control" placeholder="0.00">
+              </div>
+              <div class="form-group">
+                <label for="name">买入数量</label>
+                <input type="text" class="form-control" placeholder="0.00">
+              </div>
+              <div class="form-group">
+                <label for="name">平仓价格</label>
+                <input type="text" class="form-control" placeholder="0.00">
+              </div>
+              <div class="form-group">
+                <input type="submit" class="form-control btn-success" value="买入">
+              </div>
+            </form>
+          </div>
+      </div>
+    </div>
+
+    <div class="col-sm-6">
+      <div class="panel panel-danger">
+          <div class="panel-heading">
+              <h3 class="panel-title">实时卖出</h3>
+          </div>
+          <div class="panel-body">
+            <form role="form">
+              <div class="form-group">
+                <label for="name">交易所</label>
+                <select class="form-control">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
+                <label for="name">币种</label>
+                <select multiple class="form-control">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="name">卖出价格</label>
+                <input type="text" class="form-control" placeholder="0.00">
+              </div>
+              <div class="form-group">
+                <label for="name">卖出数量</label>
+                <input type="text" class="form-control" placeholder="0.00">
+              </div>
+              <div class="form-group">
+                <label for="name">预计盈利</label>
+                <input type="text" class="form-control" placeholder="0.00">
+              </div>
+              <div class="form-group">
+                <input type="submit" class="form-control btn-success" value="卖出">
+              </div>
+            </form>
+          </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="panel panel-default">
+      <div class="panel-heading">
+          <h3 class="panel-title">
+              买入记录
+          </h3>
+      </div>
+      <div class="panel-body" style="">
+        <table class="table">
+          <!-- <caption>交易记录</caption> -->
+          <blockquote class="ng-binding">
+            <small> <a href="" class="label label-warning">隐藏</a> </small><small> <a href="" class="label label-info">隐藏</a> </small><small> <a href="" class="label label-danger">隐藏</a> </small>
+          </blockquote>
+          <thead>
+            <tr>
+              <th>交易所</th>
+              <th>币种</th>
+              <th>价格</th>
+              <th>数量</th>
+              <th>买入余额</th>
+              <th>平仓价格</th>
+              <th>剩余数量</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="active">
+              <td>币安</td>
+              <td>BTC</td>
+              <td>$3999.67</td>
+              <td>10.8</td>
+              <td>565</td>
+              <td>$3999.0</td>
+              <td>3.81</td>
+              <th>
+                <button type="button" class="btn btn-danger">平仓</button>
+                <button type="button" class="btn btn-info">卖出</button>
+              </th>
+            </tr>
+            <tr class="success">
+              <td>币安</td>
+              <td>BTC</td>
+              <td>$3999.67</td>
+              <td>10.8</td>
+              <td>565</td>
+              <td>$3999.0</td>
+              <td>3.81</td>
+              <th>
+                <button type="button" class="btn btn-danger">平仓</button>
+                <button type="button" class="btn btn-info">卖出</button>
+              </th>
+            </tr>
+            <tr class="warning">
+              <td>币安</td>
+              <td>BTC</td>
+              <td>$3999.67</td>
+              <td>10.8</td>
+              <td>565</td>
+              <td>$3999.0</td>
+              <td>3.81</td>
+              <th>
+                <button type="button" class="btn btn-danger">平仓</button>
+                <button type="button" class="btn btn-info">卖出</button>
+              </th>
+            </tr>
+            <tr class="danger">
+              <td>币安</td>
+              <td>BTC</td>
+              <td>$3999.67</td>
+              <td>10.8</td>
+              <td>565</td>
+              <td>$3999.0</td>
+              <td>3.81</td>
+              <th>
+                <button type="button" class="btn btn-danger">平仓</button>
+                <button type="button" class="btn btn-info">卖出</button>
+              </th>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+  </div>
+
+  <!-- <p class="alert alert-success ng-binding ng-scope" ng-if="!isPrivate">
+     该机器人由 <b><i class="ng-binding">8166</i></b>
+      公开, 绑定策略: <b>
+       <font color="red" class="ng-binding">逐月5.0 租用版  (火币网)</font></b> ,
+        ngIf: robot.start_time
+        <span ng-if="robot.start_time" class="ng-binding ng-scope" style=""> 最近开始于 2019-01-15 23:30:46</span>end ngIf: robot.start_time&nbsp;
+        <span class="ng-binding">策略最后更新 <font color="red" class="ng-binding">2019-01-11 18:33:59</font></span>
+  </p> -->
+
+  <div class="panel panel-default">
+      <div class="panel-heading">
+          <h3 class="panel-title">
+              买入记录
+          </h3>
+      </div>
+      <div class="panel-body" style="">
+        <table class="table">
+          <!-- <caption>交易记录</caption> -->
+          <blockquote class="ng-binding">
+            <small> <a href="" class="label label-warning">隐藏</a> </small><small> <a href="" class="label label-info">隐藏</a> </small><small> <a href="" class="label label-danger">隐藏</a> </small>
+          </blockquote>
+          <thead>
+            <tr>
+              <th>交易所</th>
+              <th>币种</th>
+              <th>价格</th>
+              <th>数量</th>
+              <th>买入余额</th>
+              <th>平仓价格</th>
+              <th>剩余数量</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="active">
+              <td>币安</td>
+              <td>BTC</td>
+              <td>$3999.67</td>
+              <td>10.8</td>
+              <td>565</td>
+              <td>$3999.0</td>
+              <td>3.81</td>
+              <th>
+                <button type="button" class="btn btn-danger">平仓</button>
+                <button type="button" class="btn btn-info">卖出</button>
+              </th>
+            </tr>
+            <tr class="success">
+              <td>币安</td>
+              <td>BTC</td>
+              <td>$3999.67</td>
+              <td>10.8</td>
+              <td>565</td>
+              <td>$3999.0</td>
+              <td>3.81</td>
+              <th>
+                <button type="button" class="btn btn-danger">平仓</button>
+                <button type="button" class="btn btn-info">卖出</button>
+              </th>
+            </tr>
+            <tr class="warning">
+              <td>币安</td>
+              <td>BTC</td>
+              <td>$3999.67</td>
+              <td>10.8</td>
+              <td>565</td>
+              <td>$3999.0</td>
+              <td>3.81</td>
+              <th>
+                <button type="button" class="btn btn-danger">平仓</button>
+                <button type="button" class="btn btn-info">卖出</button>
+              </th>
+            </tr>
+            <tr class="danger">
+              <td>币安</td>
+              <td>BTC</td>
+              <td>$3999.67</td>
+              <td>10.8</td>
+              <td>565</td>
+              <td>$3999.0</td>
+              <td>3.81</td>
+              <th>
+                <button type="button" class="btn btn-danger">平仓</button>
+                <button type="button" class="btn btn-info">卖出</button>
+              </th>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+  </div>
+
+
+
+
+</div>

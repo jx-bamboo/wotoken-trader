@@ -5,12 +5,15 @@ class CreateBuys < ActiveRecord::Migration[5.1]
       t.decimal :number
       t.decimal :coin_balance
       t.decimal :pre_win
-      t.decimal :pre_sale
+      t.decimal :pre_sell
       t.boolean :to_sell
-      t.belongs_to :user, foreign_key: true
-      t.belongs_to :exchange, foreign_key: true
-      t.belongs_to :coin, foreign_key: true
+      t.integer :user_id
+      t.integer :exchange_id
+      t.integer :coin_id
       t.timestamps
     end
+    add_index :buys, :user_id
+    add_index :buys, :exchange_id
+    add_index :buys, :coin_id
   end
 end
